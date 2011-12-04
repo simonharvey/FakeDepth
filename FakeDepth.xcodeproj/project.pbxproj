@@ -1,0 +1,263 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		87C63A25148BEAD10060AECF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C63A24148BEAD10060AECF /* UIKit.framework */; };
+		87C63A27148BEAD10060AECF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C63A26148BEAD10060AECF /* Foundation.framework */; };
+		87C63A29148BEAD10060AECF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C63A28148BEAD10060AECF /* CoreGraphics.framework */; };
+		87C63A2F148BEAD10060AECF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 87C63A2D148BEAD10060AECF /* InfoPlist.strings */; };
+		87C63A31148BEAD10060AECF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C63A30148BEAD10060AECF /* main.m */; };
+		87C63A35148BEAD10060AECF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C63A34148BEAD10060AECF /* AppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		87C63A20148BEAD10060AECF /* FakeDepth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FakeDepth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		87C63A24148BEAD10060AECF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		87C63A26148BEAD10060AECF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		87C63A28148BEAD10060AECF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		87C63A2C148BEAD10060AECF /* FakeDepth-Info.plist */ = {isa = PBXFileReference; path = "FakeDepth-Info.plist"; sourceTree = "<group>"; };
+		87C63A2E148BEAD10060AECF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		87C63A30148BEAD10060AECF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		87C63A32148BEAD10060AECF /* FakeDepth-Prefix.pch */ = {isa = PBXFileReference; path = "FakeDepth-Prefix.pch"; sourceTree = "<group>"; };
+		87C63A33148BEAD10060AECF /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		87C63A34148BEAD10060AECF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		87C63A1D148BEAD10060AECF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87C63A25148BEAD10060AECF /* UIKit.framework in Frameworks */,
+				87C63A27148BEAD10060AECF /* Foundation.framework in Frameworks */,
+				87C63A29148BEAD10060AECF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		87C63A15148BEAD10060AECF = {
+			isa = PBXGroup;
+			children = (
+				87C63A2A148BEAD10060AECF /* FakeDepth */,
+				87C63A23148BEAD10060AECF /* Frameworks */,
+				87C63A21148BEAD10060AECF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		87C63A21148BEAD10060AECF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				87C63A20148BEAD10060AECF /* FakeDepth.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		87C63A23148BEAD10060AECF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				87C63A24148BEAD10060AECF /* UIKit.framework */,
+				87C63A26148BEAD10060AECF /* Foundation.framework */,
+				87C63A28148BEAD10060AECF /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		87C63A2A148BEAD10060AECF /* FakeDepth */ = {
+			isa = PBXGroup;
+			children = (
+				87C63A33148BEAD10060AECF /* AppDelegate.h */,
+				87C63A34148BEAD10060AECF /* AppDelegate.m */,
+				87C63A2B148BEAD10060AECF /* Supporting Files */,
+			);
+			path = FakeDepth;
+			sourceTree = "<group>";
+		};
+		87C63A2B148BEAD10060AECF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				87C63A2C148BEAD10060AECF /* FakeDepth-Info.plist */,
+				87C63A2D148BEAD10060AECF /* InfoPlist.strings */,
+				87C63A30148BEAD10060AECF /* main.m */,
+				87C63A32148BEAD10060AECF /* FakeDepth-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		87C63A1F148BEAD10060AECF /* FakeDepth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87C63A38148BEAD10060AECF /* Build configuration list for PBXNativeTarget "FakeDepth" */;
+			buildPhases = (
+				87C63A1C148BEAD10060AECF /* Sources */,
+				87C63A1D148BEAD10060AECF /* Frameworks */,
+				87C63A1E148BEAD10060AECF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FakeDepth;
+			productName = FakeDepth;
+			productReference = 87C63A20148BEAD10060AECF /* FakeDepth.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		87C63A17148BEAD10060AECF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 87C63A1A148BEAD10060AECF /* Build configuration list for PBXProject "FakeDepth" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 87C63A15148BEAD10060AECF;
+			productRefGroup = 87C63A21148BEAD10060AECF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				87C63A1F148BEAD10060AECF /* FakeDepth */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		87C63A1E148BEAD10060AECF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87C63A2F148BEAD10060AECF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		87C63A1C148BEAD10060AECF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87C63A31148BEAD10060AECF /* main.m in Sources */,
+				87C63A35148BEAD10060AECF /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		87C63A2D148BEAD10060AECF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				87C63A2E148BEAD10060AECF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		87C63A36148BEAD10060AECF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		87C63A37148BEAD10060AECF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		87C63A39148BEAD10060AECF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FakeDepth/FakeDepth-Prefix.pch";
+				INFOPLIST_FILE = "FakeDepth/FakeDepth-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		87C63A3A148BEAD10060AECF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FakeDepth/FakeDepth-Prefix.pch";
+				INFOPLIST_FILE = "FakeDepth/FakeDepth-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		87C63A1A148BEAD10060AECF /* Build configuration list for PBXProject "FakeDepth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87C63A36148BEAD10060AECF /* Debug */,
+				87C63A37148BEAD10060AECF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87C63A38148BEAD10060AECF /* Build configuration list for PBXNativeTarget "FakeDepth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87C63A39148BEAD10060AECF /* Debug */,
+				87C63A3A148BEAD10060AECF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 87C63A17148BEAD10060AECF /* Project object */;
+}
