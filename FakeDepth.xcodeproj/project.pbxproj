@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87191461148DA00B00ECCB30 /* skel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 87191460148DA00B00ECCB30 /* skel.jpg */; };
 		87C63A25148BEAD10060AECF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C63A24148BEAD10060AECF /* UIKit.framework */; };
 		87C63A27148BEAD10060AECF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C63A26148BEAD10060AECF /* Foundation.framework */; };
 		87C63A29148BEAD10060AECF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C63A28148BEAD10060AECF /* CoreGraphics.framework */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		87191460148DA00B00ECCB30 /* skel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = skel.jpg; sourceTree = "<group>"; };
 		87C63A20148BEAD10060AECF /* FakeDepth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FakeDepth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C63A24148BEAD10060AECF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		87C63A26148BEAD10060AECF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -117,6 +119,7 @@
 		87C63A7A148BF7A70060AECF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				87191460148DA00B00ECCB30 /* skel.jpg */,
 				87C63A7B148BF7C80060AECF /* fake_depth.vsh */,
 				87C63A7D148BF7D40060AECF /* fake_depth.fsh */,
 			);
@@ -176,6 +179,7 @@
 				87C63A2F148BEAD10060AECF /* InfoPlist.strings in Resources */,
 				87C63A7F148BF7E40060AECF /* fake_depth.vsh in Resources */,
 				87C63A80148BF7E70060AECF /* fake_depth.fsh in Resources */,
+				87191461148DA00B00ECCB30 /* skel.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +296,7 @@
 				87C63A3A148BEAD10060AECF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

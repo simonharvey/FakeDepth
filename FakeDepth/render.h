@@ -83,25 +83,27 @@ namespace renderer {
 			
 			glUseProgram(gl_program);
 			
-			// setup projection matrix ortho
-			
-			/*static float projection_matrix[] = {
-				2.0f/768.0f, 0, 0, -1,
-				0, 2.0f/1024.0f, 0, -1,
-				0, 0, -1, 0,
-				0, 0, 0, 1
-			};*/
-			
 			GLKMatrix4 proj = GLKMatrix4MakeOrtho(0, 768, 0, 1024, -1, 1000);
 			
-			GLuint proj_u = glGetUniformLocation(gl_program, "projection");
-			GLuint pos_a = glGetAttribLocation(gl_program, "position");
+			const GLuint proj_u = glGetUniformLocation(gl_program, "projection");
+			const GLuint pos_a = glGetAttribLocation(gl_program, "position");
+			const GLuint ctex_coords_a = glGetAttribLocation(gl_program, "colorTexCoords");
+			const GLuint ctex_u = glGetUniformLocation(gl_program, "colorTex");
 			
 			glUniformMatrix4fv(proj_u, 1, GL_FALSE, proj.m);
 			
 			for (Sprite &sp : sprites) {
+				
 				glEnableVertexAttribArray(pos_a);
 				glVertexAttribPointer(pos_a, 2, GL_FLOAT, GL_FALSE, 0, &sp.rect);
+				
+				glActiveTexture(0);
+				glBindTexture(GL_TEXTURE_2D, sp.colorTex);
+				glUniform1i(ctex_u, 0);
+				
+				glEnableVertexAttribArray(ctex_coords_a);
+				glVertexAttribPointer(ctex_coords_a, 2, GL_FLOAT, GL_FALSE, 0, &sp.colorTexCoords);
+				
 				glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
 			}
 		}

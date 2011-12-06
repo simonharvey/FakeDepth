@@ -34,10 +34,15 @@
 	const char * vsh = [[[NSBundle mainBundle] pathForResource:@"fake_depth" ofType:@"vsh"] UTF8String];
 	const char * fsh = [[[NSBundle mainBundle] pathForResource:@"fake_depth" ofType:@"fsh"] UTF8String];
 	
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"skel" ofType:@"jpg"];
+	GLKTextureInfo *tex_info = [GLKTextureLoader textureWithContentsOfFile:path options:nil error:nil];
+	
 	_renderer = new Renderer(vsh, fsh);
 	for (int i=0; i<10; i++) {
 		Sprite sp;
 		sp.rect = make_rect<float>(50 * i, 50 * i, 100, 100);
+		sp.colorTexCoords = make_rect<float>(0, 0, 1, 1);
+		sp.colorTex = tex_info.name;
 		_renderer->add_sprite(sp);
 	}
 }
