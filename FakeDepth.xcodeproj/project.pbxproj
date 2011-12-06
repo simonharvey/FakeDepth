@@ -12,7 +12,12 @@
 		87C63A29148BEAD10060AECF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C63A28148BEAD10060AECF /* CoreGraphics.framework */; };
 		87C63A2F148BEAD10060AECF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 87C63A2D148BEAD10060AECF /* InfoPlist.strings */; };
 		87C63A31148BEAD10060AECF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C63A30148BEAD10060AECF /* main.m */; };
-		87C63A35148BEAD10060AECF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C63A34148BEAD10060AECF /* AppDelegate.m */; };
+		87C63A35148BEAD10060AECF /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87C63A34148BEAD10060AECF /* AppDelegate.mm */; };
+		87C63A3D148BEAFF0060AECF /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C63A3C148BEAFF0060AECF /* OpenGLES.framework */; };
+		87C63A76148BECDC0060AECF /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C63A75148BECDC0060AECF /* GLKit.framework */; };
+		87C63A79148BF0310060AECF /* GLViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87C63A78148BF0310060AECF /* GLViewController.mm */; };
+		87C63A7F148BF7E40060AECF /* fake_depth.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 87C63A7B148BF7C80060AECF /* fake_depth.vsh */; };
+		87C63A80148BF7E70060AECF /* fake_depth.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 87C63A7D148BF7D40060AECF /* fake_depth.fsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +25,21 @@
 		87C63A24148BEAD10060AECF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		87C63A26148BEAD10060AECF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		87C63A28148BEAD10060AECF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		87C63A2C148BEAD10060AECF /* FakeDepth-Info.plist */ = {isa = PBXFileReference; path = "FakeDepth-Info.plist"; sourceTree = "<group>"; };
+		87C63A2C148BEAD10060AECF /* FakeDepth-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FakeDepth-Info.plist"; sourceTree = "<group>"; };
 		87C63A2E148BEAD10060AECF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		87C63A30148BEAD10060AECF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		87C63A32148BEAD10060AECF /* FakeDepth-Prefix.pch */ = {isa = PBXFileReference; path = "FakeDepth-Prefix.pch"; sourceTree = "<group>"; };
-		87C63A33148BEAD10060AECF /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
-		87C63A34148BEAD10060AECF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		87C63A32148BEAD10060AECF /* FakeDepth-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FakeDepth-Prefix.pch"; sourceTree = "<group>"; };
+		87C63A33148BEAD10060AECF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		87C63A34148BEAD10060AECF /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		87C63A3B148BEAEF0060AECF /* render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = render.h; sourceTree = "<group>"; };
+		87C63A3C148BEAFF0060AECF /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		87C63A75148BECDC0060AECF /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		87C63A77148BF0310060AECF /* GLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLViewController.h; sourceTree = "<group>"; };
+		87C63A78148BF0310060AECF /* GLViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GLViewController.mm; sourceTree = "<group>"; };
+		87C63A7B148BF7C80060AECF /* fake_depth.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = fake_depth.vsh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.glsl; };
+		87C63A7D148BF7D40060AECF /* fake_depth.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = fake_depth.fsh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.glsl; };
+		87C63A81148BF81A0060AECF /* gl_program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gl_program.h; sourceTree = "<group>"; };
+		87C63A82148C050F0060AECF /* gl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gl.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87C63A76148BECDC0060AECF /* GLKit.framework in Frameworks */,
+				87C63A3D148BEAFF0060AECF /* OpenGLES.framework in Frameworks */,
 				87C63A25148BEAD10060AECF /* UIKit.framework in Frameworks */,
 				87C63A27148BEAD10060AECF /* Foundation.framework in Frameworks */,
 				87C63A29148BEAD10060AECF /* CoreGraphics.framework in Frameworks */,
@@ -45,6 +61,7 @@
 		87C63A15148BEAD10060AECF = {
 			isa = PBXGroup;
 			children = (
+				87C63A7A148BF7A70060AECF /* Resources */,
 				87C63A2A148BEAD10060AECF /* FakeDepth */,
 				87C63A23148BEAD10060AECF /* Frameworks */,
 				87C63A21148BEAD10060AECF /* Products */,
@@ -62,6 +79,8 @@
 		87C63A23148BEAD10060AECF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				87C63A75148BECDC0060AECF /* GLKit.framework */,
+				87C63A3C148BEAFF0060AECF /* OpenGLES.framework */,
 				87C63A24148BEAD10060AECF /* UIKit.framework */,
 				87C63A26148BEAD10060AECF /* Foundation.framework */,
 				87C63A28148BEAD10060AECF /* CoreGraphics.framework */,
@@ -73,8 +92,13 @@
 			isa = PBXGroup;
 			children = (
 				87C63A33148BEAD10060AECF /* AppDelegate.h */,
-				87C63A34148BEAD10060AECF /* AppDelegate.m */,
+				87C63A34148BEAD10060AECF /* AppDelegate.mm */,
 				87C63A2B148BEAD10060AECF /* Supporting Files */,
+				87C63A3B148BEAEF0060AECF /* render.h */,
+				87C63A82148C050F0060AECF /* gl.h */,
+				87C63A81148BF81A0060AECF /* gl_program.h */,
+				87C63A77148BF0310060AECF /* GLViewController.h */,
+				87C63A78148BF0310060AECF /* GLViewController.mm */,
 			);
 			path = FakeDepth;
 			sourceTree = "<group>";
@@ -88,6 +112,15 @@
 				87C63A32148BEAD10060AECF /* FakeDepth-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		87C63A7A148BF7A70060AECF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				87C63A7B148BF7C80060AECF /* fake_depth.vsh */,
+				87C63A7D148BF7D40060AECF /* fake_depth.fsh */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +174,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				87C63A2F148BEAD10060AECF /* InfoPlist.strings in Resources */,
+				87C63A7F148BF7E40060AECF /* fake_depth.vsh in Resources */,
+				87C63A80148BF7E70060AECF /* fake_depth.fsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +187,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				87C63A31148BEAD10060AECF /* main.m in Sources */,
-				87C63A35148BEAD10060AECF /* AppDelegate.m in Sources */,
+				87C63A35148BEAD10060AECF /* AppDelegate.mm in Sources */,
+				87C63A79148BF0310060AECF /* GLViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
