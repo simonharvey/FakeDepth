@@ -116,65 +116,6 @@ namespace renderer {
 		{
 			glBindFramebuffer(GL_FRAMEBUFFER, old_fbo);
 		}
-	
-	/*struct RenderTexture
-	{
-		GLuint framebuffer;
-		GLuint tex;
-		GLint old_fbo;
-		const GLuint width, height;
-		
-		RenderTexture(GLuint width, GLuint height) : width(width), height(height)
-		{
-			glGetIntegerv(GL_FRAMEBUFFER_BINDING, &old_fbo);
-			
-			glGenFramebuffers(1, &framebuffer);
-			glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
-			
-			//void *data = malloc((int)(width	* height * 4));
-			//memset(data, 0, (int)(width * height * 4));
-			
-			glGenTextures(1, &tex);
-			glBindTexture(GL_TEXTURE_2D, tex);
-			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
-			glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, tex, 0);
-			
-			GLuint depthRenderbuffer;
-			glGenRenderbuffers(1, &depthRenderbuffer);
-			glBindRenderbuffer(GL_RENDERBUFFER, depthRenderbuffer);
-			//glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT16, width, height);
-			glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, depthRenderbuffer);
-			
-			GLuint status = glCheckFramebufferStatus(GL_FRAMEBUFFER);
-			if (status != GL_FRAMEBUFFER_COMPLETE) {
-				cout << status << endl;
-				throw new exception();
-			}
-			
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);        
-			
-			glClearColor(1, 0, 0, 1);
-			glClear(GL_COLOR_BUFFER_BIT);
-			
-			glBindFramebuffer(GL_FRAMEBUFFER, old_fbo);
-		}
-		
-		void begin()
-		{
-			glGetIntegerv(GL_FRAMEBUFFER_BINDING, &old_fbo);
-			glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
-			glViewport(0, 0, width, height);
-			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-			glDisable(GL_CULL_FACE);
-			glDisable(GL_DEPTH_TEST);
-			glDepthFunc(GL_ALWAYS);
-		}
-		
-		void end()
-		{
-			glBindFramebuffer(GL_FRAMEBUFFER, old_fbo);
-		}*/
 	};
 	
 	struct Renderer
