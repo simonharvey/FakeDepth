@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		87191461148DA00B00ECCB30 /* skel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 87191460148DA00B00ECCB30 /* skel.jpg */; };
-		87191465148DA57200ECCB30 /* cube_color.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 87191463148DA57200ECCB30 /* cube_color.jpg */; };
-		87191466148DA57200ECCB30 /* cube_depth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 87191464148DA57200ECCB30 /* cube_depth.jpg */; };
-		8719146B148DB70200ECCB30 /* fake_color.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 87191467148DB6EF00ECCB30 /* fake_color.fsh */; };
-		8719146C148DB70500ECCB30 /* fake_color.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 87191468148DB6EF00ECCB30 /* fake_color.vsh */; };
 		87C63A25148BEAD10060AECF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C63A24148BEAD10060AECF /* UIKit.framework */; };
 		87C63A27148BEAD10060AECF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C63A26148BEAD10060AECF /* Foundation.framework */; };
 		87C63A29148BEAD10060AECF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C63A28148BEAD10060AECF /* CoreGraphics.framework */; };
@@ -21,16 +16,15 @@
 		87C63A3D148BEAFF0060AECF /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C63A3C148BEAFF0060AECF /* OpenGLES.framework */; };
 		87C63A76148BECDC0060AECF /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C63A75148BECDC0060AECF /* GLKit.framework */; };
 		87C63A79148BF0310060AECF /* GLViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87C63A78148BF0310060AECF /* GLViewController.mm */; };
-		87C63A7F148BF7E40060AECF /* fake_depth.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 87C63A7B148BF7C80060AECF /* fake_depth.vsh */; };
-		87C63A80148BF7E70060AECF /* fake_depth.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 87C63A7D148BF7D40060AECF /* fake_depth.fsh */; };
+		87F228B5149830B2008FD14F /* cube_color.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 87F228AF149830B2008FD14F /* cube_color.jpg */; };
+		87F228B6149830B2008FD14F /* cube_depth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 87F228B0149830B2008FD14F /* cube_depth.jpg */; };
+		87F228BB149830BE008FD14F /* fake_color.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 87F228B1149830B2008FD14F /* fake_color.fsh */; };
+		87F228BC149830C3008FD14F /* fake_color.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 87F228B2149830B2008FD14F /* fake_color.vsh */; };
+		87F228BD149830C7008FD14F /* fake_depth.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 87F228B3149830B2008FD14F /* fake_depth.fsh */; };
+		87F228BE149830C9008FD14F /* fake_depth.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 87F228B4149830B2008FD14F /* fake_depth.vsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		87191460148DA00B00ECCB30 /* skel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = skel.jpg; sourceTree = "<group>"; };
-		87191463148DA57200ECCB30 /* cube_color.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cube_color.jpg; sourceTree = "<group>"; };
-		87191464148DA57200ECCB30 /* cube_depth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cube_depth.jpg; sourceTree = "<group>"; };
-		87191467148DB6EF00ECCB30 /* fake_color.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = fake_color.fsh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.glsl; };
-		87191468148DB6EF00ECCB30 /* fake_color.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = fake_color.vsh; sourceTree = "<group>"; };
 		87C63A20148BEAD10060AECF /* FakeDepth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FakeDepth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C63A24148BEAD10060AECF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		87C63A26148BEAD10060AECF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -46,9 +40,13 @@
 		87C63A75148BECDC0060AECF /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		87C63A77148BF0310060AECF /* GLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLViewController.h; sourceTree = "<group>"; };
 		87C63A78148BF0310060AECF /* GLViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GLViewController.mm; sourceTree = "<group>"; };
-		87C63A7B148BF7C80060AECF /* fake_depth.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = fake_depth.vsh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.glsl; };
-		87C63A7D148BF7D40060AECF /* fake_depth.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = fake_depth.fsh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.glsl; };
 		87C63A82148C050F0060AECF /* gl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gl.h; sourceTree = "<group>"; };
+		87F228AF149830B2008FD14F /* cube_color.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cube_color.jpg; path = FakeDepth/Resources/cube_color.jpg; sourceTree = "<group>"; };
+		87F228B0149830B2008FD14F /* cube_depth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cube_depth.jpg; path = FakeDepth/Resources/cube_depth.jpg; sourceTree = "<group>"; };
+		87F228B1149830B2008FD14F /* fake_color.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = fake_color.fsh; path = FakeDepth/Resources/fake_color.fsh; sourceTree = "<group>"; };
+		87F228B2149830B2008FD14F /* fake_color.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = fake_color.vsh; path = FakeDepth/Resources/fake_color.vsh; sourceTree = "<group>"; };
+		87F228B3149830B2008FD14F /* fake_depth.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = fake_depth.fsh; path = FakeDepth/Resources/fake_depth.fsh; sourceTree = "<group>"; };
+		87F228B4149830B2008FD14F /* fake_depth.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = fake_depth.vsh; path = FakeDepth/Resources/fake_depth.vsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,13 +123,12 @@
 		87C63A7A148BF7A70060AECF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				87191463148DA57200ECCB30 /* cube_color.jpg */,
-				87191464148DA57200ECCB30 /* cube_depth.jpg */,
-				87191460148DA00B00ECCB30 /* skel.jpg */,
-				87C63A7B148BF7C80060AECF /* fake_depth.vsh */,
-				87C63A7D148BF7D40060AECF /* fake_depth.fsh */,
-				87191467148DB6EF00ECCB30 /* fake_color.fsh */,
-				87191468148DB6EF00ECCB30 /* fake_color.vsh */,
+				87F228AF149830B2008FD14F /* cube_color.jpg */,
+				87F228B0149830B2008FD14F /* cube_depth.jpg */,
+				87F228B1149830B2008FD14F /* fake_color.fsh */,
+				87F228B2149830B2008FD14F /* fake_color.vsh */,
+				87F228B3149830B2008FD14F /* fake_depth.fsh */,
+				87F228B4149830B2008FD14F /* fake_depth.vsh */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -187,13 +184,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				87C63A2F148BEAD10060AECF /* InfoPlist.strings in Resources */,
-				87C63A7F148BF7E40060AECF /* fake_depth.vsh in Resources */,
-				87C63A80148BF7E70060AECF /* fake_depth.fsh in Resources */,
-				8719146C148DB70500ECCB30 /* fake_color.vsh in Resources */,
-				8719146B148DB70200ECCB30 /* fake_color.fsh in Resources */,
-				87191461148DA00B00ECCB30 /* skel.jpg in Resources */,
-				87191465148DA57200ECCB30 /* cube_color.jpg in Resources */,
-				87191466148DA57200ECCB30 /* cube_depth.jpg in Resources */,
+				87F228B5149830B2008FD14F /* cube_color.jpg in Resources */,
+				87F228B6149830B2008FD14F /* cube_depth.jpg in Resources */,
+				87F228BB149830BE008FD14F /* fake_color.fsh in Resources */,
+				87F228BC149830C3008FD14F /* fake_color.vsh in Resources */,
+				87F228BD149830C7008FD14F /* fake_depth.fsh in Resources */,
+				87F228BE149830C9008FD14F /* fake_depth.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

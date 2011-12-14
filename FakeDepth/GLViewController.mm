@@ -22,7 +22,8 @@
 	[v release];
 }
 
-#define LOAD_TEX(name, type) [GLKTextureLoader textureWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:type] options:nil error:nil]
+#define LOAD_TEX(name, type)\
+[GLKTextureLoader textureWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:type] options:nil error:nil]
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -32,13 +33,14 @@
 	NSLog(@"view did load");
 	EAGLContext *c = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
 	[EAGLContext setCurrentContext:c];
-	((GLKView *)self.view).context = c;
-	const char * vsh = [[[NSBundle mainBundle] pathForResource:@"fake_depth" ofType:@"vsh"] UTF8String];
-	const char * fsh = [[[NSBundle mainBundle] pathForResource:@"fake_depth" ofType:@"fsh"] UTF8String];
+	GLKView *glk = ((GLKView *)self.view);
+	glk.drawableDepthFormat = GLKViewDrawableDepthFormatNone;
+	glk.drawableColorFormat = GLKViewDrawableColorFormatRGBA8888;
+	glk.context = c;
 	
-	_renderer = new Renderer(vsh, fsh);
+	_renderer = new Renderer();
 	
-	Sprite fg, bg;
+	Sprite fg;
 	fg.rect = make_rect<float>(0, 0, 640, 480);
 	fg.colorTexCoords = make_rect<float>(0, 0, 1, 1);
 	fg.colorTex = LOAD_TEX(@"cube_color", @"jpg").name;

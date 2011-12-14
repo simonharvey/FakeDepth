@@ -25,11 +25,9 @@ shaderLoadSource(const char *filePath)
 	long size = ftell(fp);
 	fseek(fp, 0, SEEK_SET);
 	char *pData = new char[size + 1];
-	//memset(pData, '?', size);
-	int lRet = fread(pData, sizeof(char), size, fp);
+	fread(pData, sizeof(char), size, fp);
 	fclose(fp);
 	pData[size] = NULL;
-	//cout << "----" << pData << "----" << endl;
 	return pData;
 }
 

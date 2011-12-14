@@ -1,3 +1,7 @@
+#ifdef GL_ES
+precision highp float;
+#endif
+
 varying mediump vec2 v_texCoords;
 
 uniform sampler2D depthTex;
