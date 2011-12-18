@@ -30,8 +30,8 @@
 	EAGLContext *c = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
 	[EAGLContext setCurrentContext:c];
 	GLKView *glk = ((GLKView *)self.view);
-	glk.drawableDepthFormat = GLKViewDrawableDepthFormatNone;
-	glk.drawableColorFormat = GLKViewDrawableColorFormatRGBA8888;
+	//glk.drawableDepthFormat = GLKViewDrawableDepthFormatNone;
+	//glk.drawableColorFormat = GLKViewDrawableColorFormatRGBA8888;
 	glk.context = c;
 	
 	_renderer = new Renderer();

@@ -78,12 +78,13 @@ namespace renderer {
 			glGenFramebuffers(1, &framebuffer);
 			glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
 			
-			void *data = malloc((int)(width	* height * 4));
-			memset(data, 0, (int)(width * height * 4));
+			void *data = malloc((int)(height	* height * 4));
+			memset(data, 0, (int)(height * height * 4));
 			
 			glGenTextures(1, &tex);
 			glBindTexture(GL_TEXTURE_2D, tex);
-			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, height, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
+			glBindTexture(GL_TEXTURE_2D, 0);
 			glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, tex, 0);
 			
 			/*
@@ -121,7 +122,7 @@ namespace renderer {
 	struct Renderer
 	{
 		vector<Sprite> sprites;
-		GLuint depth_glprog, color_glprog;
+		GLuint depth_glprog;
 		RenderTexture * depth_off;
 		static const GLuint size_x = 768, size_y = 1024;
 		GLKMatrix4 proj;
@@ -130,17 +131,11 @@ namespace renderer {
 		{
 			proj = GLKMatrix4MakeOrtho(0, size_x, size_y, 0, 0.0f, 1000.0f);
 			
-			
 			depth_off = new RenderTexture(size_x, size_y);
 			depth_glprog = glCreateProgram();
-			shaderAttachFromFile(depth_glprog, GL_VERTEX_SHADER, abs_path("fake_depth.vsh"));
-			shaderAttachFromFile(depth_glprog, GL_FRAGMENT_SHADER, abs_path("fake_depth.fsh"));
+			shaderAttachFromFile(depth_glprog, GL_VERTEX_SHADER, abs_path("simple_texture.vsh"));
+			shaderAttachFromFile(depth_glprog, GL_FRAGMENT_SHADER, abs_path("simple_texture.fsh"));
 			glLinkProgram(depth_glprog);
-			
-			color_glprog = glCreateProgram();
-			shaderAttachFromFile(color_glprog, GL_VERTEX_SHADER, abs_path("fake_color.vsh"));
-			shaderAttachFromFile(color_glprog, GL_FRAGMENT_SHADER, abs_path("fake_color.fsh"));
-			glLinkProgram(color_glprog);
 			
 			GLuint vertexBuffer;
 			glGenBuffers(1, &vertexBuffer);
@@ -155,7 +150,7 @@ namespace renderer {
 			const GLuint proj_u =			glGetUniformLocation(gl_program, "projection");
 			const GLuint pos_a =			glGetAttribLocation	(gl_program, "position");
 			const GLuint ctex_coords_a =	glGetAttribLocation	(gl_program, "texCoords");
-			const GLuint ctex_u =			glGetUniformLocation(gl_program, "depthTex");
+			const GLuint ctex_u =			glGetUniformLocation(gl_program, "tex");
 			
 			glUniformMatrix4fv(proj_u, 1, GL_FALSE, proj.m);
 			
@@ -182,7 +177,7 @@ namespace renderer {
 			const GLuint proj_u =			glGetUniformLocation(gl_program, "projection");
 			const GLuint pos_a =			glGetAttribLocation	(gl_program, "position");
 			const GLuint ctex_coords_a =	glGetAttribLocation	(gl_program, "texCoords");
-			const GLuint ctex_u =			glGetUniformLocation(gl_program, "depthTex");
+			const GLuint ctex_u =			glGetUniformLocation(gl_program, "tex");
 			
 			glUniformMatrix4fv(proj_u, 1, GL_FALSE, proj.m);
 			
@@ -200,60 +195,6 @@ namespace renderer {
 			glVertexAttribPointer(ctex_coords_a, 2, GL_FLOAT, GL_FALSE, 0, &tex_coords);
 			
 			glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
-		}
-		
-		void color_render_pass()
-		{
-			GLuint gl_program = color_glprog;
-			
-			glUseProgram(gl_program);
-			
-			GLKMatrix4 proj = GLKMatrix4MakeOrtho(0, 768, 0, 1024, -1, 1000);
-			
-			const GLuint proj_u =			glGetUniformLocation(gl_program, "projection");
-			const GLuint pos_a =			glGetAttribLocation	(gl_program, "position");
-			const GLuint ctex_coords_a =	glGetAttribLocation	(gl_program, "texCoords");
-			const GLuint ctex_u =			glGetUniformLocation(gl_program, "colorTex");
-			const GLuint dtex_u =			glGetUniformLocation(gl_program, "depthTex");
-			const GLuint screen_tex_u =		glGetUniformLocation(gl_program, "screenDepthTex");
-			const GLuint screen_coords_a =	glGetAttribLocation	(gl_program, "screenCoords");
-			
-			glUniformMatrix4fv(proj_u, 1, GL_FALSE, proj.m);
-			
-			// todo: keep the sprites sorted by texture to prevent most glBindTexture calls.
-			for (Sprite &sp : sprites) {
-				
-				glActiveTexture(GL_TEXTURE0);
-				glBindTexture(GL_TEXTURE_2D, sp.colorTex);
-				glUniform1i(ctex_u, 0);
-				
-				glActiveTexture(GL_TEXTURE1);
-				glBindTexture(GL_TEXTURE_2D, sp.depthTex);
-				glUniform1i(dtex_u, 1);
-				
-				glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_NEAREST);
-				glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_NEAREST);
-				
-				glEnableVertexAttribArray(pos_a);
-				glVertexAttribPointer(pos_a, 2, GL_FLOAT, GL_FALSE, 0, &sp.rect);
-				
-				glEnableVertexAttribArray(ctex_coords_a);
-				glVertexAttribPointer(ctex_coords_a, 2, GL_FLOAT, GL_FALSE, 0, &sp.colorTexCoords);
-				
-				glActiveTexture(GL_TEXTURE2);
-				glBindTexture(GL_TEXTURE_2D, depth_off->tex);
-				glUniform1i(screen_tex_u, 2);
-				
-				Rect<float> screen_p = make_rect((float)sp.rect.x()/size_x, 
-												 (float)sp.rect.y()/size_y, 
-												 (float)sp.rect.width()/size_x, 
-												 (float)sp.rect.height()/size_y);
-				glEnableVertexAttribArray(screen_coords_a);
-				glVertexAttribPointer(screen_coords_a, 2, GL_FLOAT, GL_FALSE, 0, &screen_p);
-				
-				glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
-			}
-			
 		}
 		
 		void render()

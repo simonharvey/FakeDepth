@@ -7,6 +7,6 @@ varying mediump vec2 v_texCoords;
 
 void main()
 {
-	gl_Position = projection * vec4(position.xy, -10, 1.);
+	gl_Position = projection * vec4(position.xy, 0., 1.);
 	v_texCoords = texCoords;
 }
