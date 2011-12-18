@@ -78,8 +78,8 @@ namespace renderer {
 			glGenFramebuffers(1, &framebuffer);
 			glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
 			
-			void *data = malloc((int)(height	* height * 4));
-			memset(data, 0, (int)(height * height * 4));
+			//void *data = malloc((int)(width * height * 4));
+			//memset(data, 0, (int)(width * height * 4));
 			
 			glGenTextures(1, &tex);
 			glBindTexture(GL_TEXTURE_2D, tex);
