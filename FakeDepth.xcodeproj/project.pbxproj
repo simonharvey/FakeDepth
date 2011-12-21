@@ -23,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		87956E3514A1623700F66D07 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
 		87C63A20148BEAD10060AECF /* FakeDepth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FakeDepth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C63A24148BEAD10060AECF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		87C63A26148BEAD10060AECF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -41,6 +42,8 @@
 		87C63A82148C050F0060AECF /* gl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gl.h; sourceTree = "<group>"; };
 		87D43E24149C1A150001F788 /* simple_texture.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = simple_texture.fsh; path = FakeDepth/Resources/simple_texture.fsh; sourceTree = "<group>"; };
 		87D43E25149C1A150001F788 /* simple_texture.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = simple_texture.vsh; path = FakeDepth/Resources/simple_texture.vsh; sourceTree = "<group>"; };
+		87D6132D149ED673004B3637 /* iso.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iso.h; sourceTree = "<group>"; };
+		87D6132F149ED6B9004B3637 /* grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = grid.h; sourceTree = "<group>"; };
 		87F228AF149830B2008FD14F /* cube_color.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cube_color.jpg; path = FakeDepth/Resources/cube_color.jpg; sourceTree = "<group>"; };
 		87F228B0149830B2008FD14F /* cube_depth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cube_depth.jpg; path = FakeDepth/Resources/cube_depth.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,10 +100,13 @@
 				87C63A33148BEAD10060AECF /* AppDelegate.h */,
 				87C63A34148BEAD10060AECF /* AppDelegate.mm */,
 				87C63A2B148BEAD10060AECF /* Supporting Files */,
+				87956E3514A1623700F66D07 /* types.h */,
 				87C63A3B148BEAEF0060AECF /* render.h */,
 				87C63A82148C050F0060AECF /* gl.h */,
 				87C63A77148BF0310060AECF /* GLViewController.h */,
 				87C63A78148BF0310060AECF /* GLViewController.mm */,
+				87D6132D149ED673004B3637 /* iso.h */,
+				87D6132F149ED6B9004B3637 /* grid.h */,
 			);
 			path = FakeDepth;
 			sourceTree = "<group>";

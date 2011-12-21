@@ -14,8 +14,10 @@
 #include <OpenGLES/ES2/glext.h>
 #include "gl.h"
 #include <GLKit/GLKMatrix4.h>
+#include "types.h"
 
 using namespace std;
+using namespace types;
 
 inline const char * abs_path(const char *f)
 {
@@ -28,34 +30,6 @@ inline const char * abs_path(const char *f)
 }
 
 namespace renderer {
-	
-	template <typename T>
-	struct Point
-	{
-		T x, y;
-	};
-	
-	template <typename T>
-	struct Rect 
-	{
-		Point<T> a, b, c, d;
-		T width() { return d.x - a.x; }
-		T height() { return b.y - a.y; }
-		T x() { return a.x; }
-		T y() { return a.y; }
-	};
-	
-	template <typename T>
-	Rect<T> make_rect(T x, T y, T w, T h)
-	{
-		Rect<T> r = {
-			{x, y},
-			{x, y+h},
-			{x+w, y+h},
-			{x+w, y}
-		};
-		return r;
-	}
 	
 	struct Sprite
 	{
@@ -78,13 +52,14 @@ namespace renderer {
 			glGenFramebuffers(1, &framebuffer);
 			glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
 			
-			//void *data = malloc((int)(width * height * 4));
-			//memset(data, 0, (int)(width * height * 4));
+			void *data = malloc((int)(width * height * 4));
+			memset(data, 0, (int)(width * height * 4));
 			
 			glGenTextures(1, &tex);
 			glBindTexture(GL_TEXTURE_2D, tex);
-			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, height, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
-			glBindTexture(GL_TEXTURE_2D, 0);
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, height, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+			free(data);
+			
 			glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, tex, 0);
 			
 			/*
@@ -98,8 +73,11 @@ namespace renderer {
 			GLuint status = glCheckFramebufferStatus(GL_FRAMEBUFFER);
 			if (status != GL_FRAMEBUFFER_COMPLETE) {
 				cout << status << endl;
-				throw new exception();
+				exit(status);//throw new exception();
 			}
+			
+			glTexParameterf( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+			glTexParameterf( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
 			
 			glBindFramebuffer(GL_FRAMEBUFFER, old_fbo);
 		}
@@ -167,6 +145,7 @@ namespace renderer {
 				
 				glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
 			}
+			glUseProgram(0);
 		}
 		
 		void debug_depth_render_pass()
@@ -181,20 +160,21 @@ namespace renderer {
 			
 			glUniformMatrix4fv(proj_u, 1, GL_FALSE, proj.m);
 			
-			Rect<float> rect = make_rect<float>(0, 0, size_x/3, size_y/3);
+			Rect<float> rect = make_rect<float>(0, 0, size_x/2, size_y/2);
 			glEnableVertexAttribArray(pos_a);
 			glVertexAttribPointer(pos_a, 2, GL_FLOAT, GL_FALSE, 0, &rect);
 			
-			glActiveTexture(GL_TEXTURE2);
+			glActiveTexture(GL_TEXTURE0);
 			glBindTexture(GL_TEXTURE_2D, depth_off->tex);
 			//glBindTexture(GL_TEXTURE_2D, sprites[0].colorTex); // uncomment this and the texture shows up, so not a problem with the shader...
-			glUniform1i(ctex_u, 2);
+			glUniform1i(ctex_u, 0);
 			
 			glEnableVertexAttribArray(ctex_coords_a);
 			Rect<float> tex_coords = make_rect<float>(0, 0, 1, 1);
 			glVertexAttribPointer(ctex_coords_a, 2, GL_FLOAT, GL_FALSE, 0, &tex_coords);
 			
 			glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
+			glUseProgram(0);
 		}
 		
 		void render()
