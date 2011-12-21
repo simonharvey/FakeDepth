@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87956E9B14A1688A00F66D07 /* fake_depth.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 87956E9714A1671300F66D07 /* fake_depth.fsh */; };
+		87956E9C14A1688A00F66D07 /* fake_depth.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 87956E9814A1671300F66D07 /* fake_depth.vsh */; };
+		87956EA314A17AE900F66D07 /* ball_color.png in Resources */ = {isa = PBXBuildFile; fileRef = 87956EA114A17AE900F66D07 /* ball_color.png */; };
+		87956EA414A17AE900F66D07 /* ball_depth.png in Resources */ = {isa = PBXBuildFile; fileRef = 87956EA214A17AE900F66D07 /* ball_depth.png */; };
 		87C63A25148BEAD10060AECF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C63A24148BEAD10060AECF /* UIKit.framework */; };
 		87C63A27148BEAD10060AECF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C63A26148BEAD10060AECF /* Foundation.framework */; };
 		87C63A29148BEAD10060AECF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C63A28148BEAD10060AECF /* CoreGraphics.framework */; };
@@ -24,6 +28,11 @@
 
 /* Begin PBXFileReference section */
 		87956E3514A1623700F66D07 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		87956E9714A1671300F66D07 /* fake_depth.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = fake_depth.fsh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.glsl; };
+		87956E9814A1671300F66D07 /* fake_depth.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = fake_depth.vsh; sourceTree = "<group>"; };
+		87956EA114A17AE900F66D07 /* ball_color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ball_color.png; path = FakeDepth/Resources/ball_color.png; sourceTree = "<group>"; };
+		87956EA214A17AE900F66D07 /* ball_depth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ball_depth.png; path = FakeDepth/Resources/ball_depth.png; sourceTree = "<group>"; };
+		87956EA514A19B6E00F66D07 /* resources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resources.h; sourceTree = "<group>"; };
 		87C63A20148BEAD10060AECF /* FakeDepth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FakeDepth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C63A24148BEAD10060AECF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		87C63A26148BEAD10060AECF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -40,7 +49,7 @@
 		87C63A77148BF0310060AECF /* GLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLViewController.h; sourceTree = "<group>"; };
 		87C63A78148BF0310060AECF /* GLViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GLViewController.mm; sourceTree = "<group>"; };
 		87C63A82148C050F0060AECF /* gl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gl.h; sourceTree = "<group>"; };
-		87D43E24149C1A150001F788 /* simple_texture.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = simple_texture.fsh; path = FakeDepth/Resources/simple_texture.fsh; sourceTree = "<group>"; };
+		87D43E24149C1A150001F788 /* simple_texture.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = simple_texture.fsh; path = FakeDepth/Resources/simple_texture.fsh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.glsl; };
 		87D43E25149C1A150001F788 /* simple_texture.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = simple_texture.vsh; path = FakeDepth/Resources/simple_texture.vsh; sourceTree = "<group>"; };
 		87D6132D149ED673004B3637 /* iso.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iso.h; sourceTree = "<group>"; };
 		87D6132F149ED6B9004B3637 /* grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = grid.h; sourceTree = "<group>"; };
@@ -107,6 +116,7 @@
 				87C63A78148BF0310060AECF /* GLViewController.mm */,
 				87D6132D149ED673004B3637 /* iso.h */,
 				87D6132F149ED6B9004B3637 /* grid.h */,
+				87956EA514A19B6E00F66D07 /* resources.h */,
 			);
 			path = FakeDepth;
 			sourceTree = "<group>";
@@ -125,10 +135,14 @@
 		87C63A7A148BF7A70060AECF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				87956EA114A17AE900F66D07 /* ball_color.png */,
+				87956EA214A17AE900F66D07 /* ball_depth.png */,
 				87F228AF149830B2008FD14F /* cube_color.jpg */,
 				87F228B0149830B2008FD14F /* cube_depth.jpg */,
-				87D43E24149C1A150001F788 /* simple_texture.fsh */,
 				87D43E25149C1A150001F788 /* simple_texture.vsh */,
+				87D43E24149C1A150001F788 /* simple_texture.fsh */,
+				87956E9814A1671300F66D07 /* fake_depth.vsh */,
+				87956E9714A1671300F66D07 /* fake_depth.fsh */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -183,11 +197,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87956E9B14A1688A00F66D07 /* fake_depth.fsh in Resources */,
+				87956E9C14A1688A00F66D07 /* fake_depth.vsh in Resources */,
 				87C63A2F148BEAD10060AECF /* InfoPlist.strings in Resources */,
 				87F228B5149830B2008FD14F /* cube_color.jpg in Resources */,
 				87F228B6149830B2008FD14F /* cube_depth.jpg in Resources */,
 				87D43E29149C1A210001F788 /* simple_texture.fsh in Resources */,
 				87D43E2A149C1A280001F788 /* simple_texture.vsh in Resources */,
+				87956EA314A17AE900F66D07 /* ball_color.png in Resources */,
+				87956EA414A17AE900F66D07 /* ball_depth.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,7 +252,7 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -252,7 +270,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;

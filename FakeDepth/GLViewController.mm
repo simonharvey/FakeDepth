@@ -7,6 +7,7 @@
 //
 
 #import "GLViewController.h"
+#import "iso.h"
 
 @implementation GLViewController
 
@@ -23,6 +24,16 @@
 #define LOAD_TEX(name, type)\
 [GLKTextureLoader textureWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:type] options:nil error:nil]
 
+Sprite create_sprite(float x, float y, float width, float height)
+{
+	Sprite fg;
+	fg.rect = make_rect<float>(x, y, width, height);
+	fg.colorTexCoords = make_rect<float>(0, 0, 1, 1);
+	fg.colorTex = LOAD_TEX(@"ball_color", @"png").name;
+	fg.depthTex = LOAD_TEX(@"ball_depth", @"png").name;
+	return fg;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -36,12 +47,9 @@
 	
 	_renderer = new Renderer();
 	
-	Sprite fg;
-	fg.rect = make_rect<float>(0, 0, 640, 480);
-	fg.colorTexCoords = make_rect<float>(0, 0, 1, 1);
-	fg.colorTex = LOAD_TEX(@"cube_color", @"jpg").name;
-	fg.depthTex = LOAD_TEX(@"cube_depth", @"jpg").name;
-	_renderer->add_sprite(fg);
+	_renderer->add_sprite(create_sprite(0, 0, 500, 500));
+	_renderer->add_sprite(create_sprite(75, 300, 500, 500));
+	_renderer->add_sprite(create_sprite(300, 100, 500, 500));
 }
 
 -(void)glkView:(GLKView *)view drawInRect:(CGRect)rect 

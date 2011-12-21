@@ -9,8 +9,10 @@
 #ifndef FakeDepth_types_h
 #define FakeDepth_types_h
 
+typedef unsigned int uint;
+
 namespace types 
-{
+{	
 	template <typename T>
 	struct Point
 	{
@@ -37,6 +39,17 @@ namespace types
 			{x+w, y}
 		};
 		return r;
+	}
+	
+	static unsigned long next_pot(unsigned long x)
+	{
+		x = x - 1;
+		x = x | (x >> 1);
+		x = x | (x >> 2);
+		x = x | (x >> 4);
+		x = x | (x >> 8);
+		x = x | (x >>16);
+		return x + 1;
 	}
 }
 
